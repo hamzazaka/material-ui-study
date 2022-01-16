@@ -2,21 +2,33 @@ import logo from './logo.svg';
 import './App.css';
 import {Button, ButtonGroup, IconButton, Typography} from '@material-ui/core';
 import  Container  from '@material-ui/core/Container';
-import { Fingerprint } from '@material-ui/icons';
+import { AcUnitOutlined, KeyboardArrowRight, Book, Fingerprint } from '@material-ui/icons';
+import {makeStyles} from '@material-ui/core';
+
+const useStyles=makeStyles({
+  btn:{
+    background:'green',
+    fontSize:20,
+    '&:hover':{
+      background: 'blue'
+    }
+  },
+  title:{
+    textDecoration:'underline',
+    marginBottom:20
+  }
+})
 
 function App() {
+  const classes=useStyles()
   return (
     <Container>
       <h1>hello world</h1>
-      <Typography variant='h5' color='textSecondary' component='h2' gutterBottom>
+      <Typography className={classes.title} variant='h5' color='textSecondary' component='h2' gutterBottom>
         Create a New Note
       </Typography>
-      <Button 
-      onClick={()=>console.log('you clicked me')}
-      type='submit' color='secondary' variant='contained' > Submit</Button>
-      <IconButton aria-label='fingerprint' color='secondary'>
-        <Fingerprint/>
-      </IconButton>
+      <Button className={classes.btn} type='submit' color='secondary' variant='contained' startIcon={<Fingerprint/>} endIcon={<KeyboardArrowRight/>} > Submit</Button> <br/>
+      <AcUnitOutlined color='secondary' fontSize='large' />
     </Container>
   );
 }
