@@ -1,15 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-import {Typography} from '@material-ui/core'
+import {Button, ButtonGroup, IconButton, Typography} from '@material-ui/core';
+import  Container  from '@material-ui/core/Container';
 
 function App() {
   return (
-    <div className="App">
+    <Container>
       <h1>hello world</h1>
-      <Typography style={{color:'pink'}} variant='h2' color='pink' noWrap >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores inventore debitis quis doloremque nemo nihil provident nesciunt quae animi. Doloribus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta adipisci autem velit necessitatibus nisi recusandae dolorem repellat accusantium ipsam quidem?
+      <Typography variant='h5' color='textSecondary' component='h2' gutterBottom>
+        Create a New Note
       </Typography>
-    </div>
+      <Button 
+      onClick={()=>console.log('you clicked me')}
+      type='submit' color='secondary' variant='contained' > Submit</Button>
+    </Container>
   );
 }
 
